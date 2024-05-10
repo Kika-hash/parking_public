@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking App / Leave</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header>
+    <h1>Leave</h1>
+</header>
+<div class="content">
+    <a href="/" class="button">Go Back</a><br>
+    <p></p>
+
+    <form action="/leave" method="post">
+        <input type="text" id="carNumber" required name="carNumberLeave" placeholder="Enter car registration number"><br>
+        <p></p>
+        <button class="button" id="submitBtn" type="submit">Leave</button>
+    </form>
+
+
+    <h2>Parking barrier:
+        <span id="barrier"> {{ goNoGo }} </span>
+    </h2>
+</div>
+</body>
+</html>

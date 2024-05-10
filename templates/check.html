@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking App / Check</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header>
+    <h1>Check the amount</h1>
+</header>
+<div class="content">
+    <a href="/" class="button">Go Back</a><br>
+    <p></p>
+
+    <form action="/check" method="post">
+        <input type="text" id="carNumber" required name="carNumberCheck" placeholder="Enter car registration number"><br>
+        <p></p>
+        <button class="button" id="submitBtn" type="submit">Check the amount</button>
+    </form>
+
+
+    <h2>Amount to Pay:
+        {% if moneyToPay is not none %}
+        <span id="moneyDue"> {{ moneyToPay }} </span>
+        {% endif %}
+    </h2>
+
+    <button class="button" id="payBtn" onclick="window.location.href='/pay'">Pay</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking App / Enter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header>
+    <h1>Enter</h1>
+</header>
+<div class="content">
+    <a href="/" class="button">Go Back</a>
+    <h2>Available Parking Spaces: <span id="availableSpaces">{{ available_space }}</span></h2>
+    <form action="/enter" method="post">
+        <input type="text" required id="carNumber" name="carNumber" placeholder="Enter car registration number"><br>
+        <p></p>
+        <button class="button" id="submitBtn" type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

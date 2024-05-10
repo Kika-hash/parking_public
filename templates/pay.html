@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking App / Pay</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header>
+    <h1>Pay</h1>
+</header>
+<div class="content">
+    <a href="/check" class="button">Go Back</a><br>
+    <p></p>
+
+    <form action="/pay" method="post">
+        <input type="text" id="carNumberPay" required name="carNumberPay" placeholder="Enter car registration number"><br>
+        <input type="number" id="paymentAmount" required name="paymentAmount" required placeholder="Enter amount to pay"><br>
+        <p></p>
+        <button class="button" id="payButton" >Pay</button>
+    </form>
+    <p></p>
+    {% if result_message is not none %}
+    <span id="payment"> {{ result_message }}</span>
+    {% endif %}
+    <p></p>
+    <button class="button" id="leaveBtn" onclick="window.location.href='/leave'">Leave</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header>
+    <h1>Parking App</h1>
+</header>
+<div class="image-container">
+    <img src="{{ url_for('static', filename='parking.jpg') }}" alt="Parking Image">
+</div>
+<div>
+    {% if result_message %}
+    <div class="response" id="response">{{ result_message }}</div>
+    {% endif %}
+</div>
+<div class="button-container">
+    <button class="button" id="enterBtn" onclick="window.location.href='/enter'">Enter</button>
+    <button class="button" id="payBtn" onclick="window.location.href='/check'">Pay</button>
+    <button class="button" id="leaveBtn" onclick="window.location.href='/leave'">Leave</button>
+</div>
+</body>
+</html>
